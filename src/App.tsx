@@ -1,10 +1,11 @@
 // import "./App.css";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Rootstate } from "../features/store";
 import Happening from "./components/Happening";
 
 function App() {
-  const happening = useSelector((state) => state.happening.name);
+  const happening = useSelector((state: Rootstate) => state.happening.name);
 
   console.log(happening);
 

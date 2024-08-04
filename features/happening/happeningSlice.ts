@@ -1,6 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface happeningState {
+  name: string;
+}
+
+const initialState: happeningState = {
   name: "Initial Happening",
 };
 
@@ -8,7 +12,7 @@ const happeningSlice = createSlice({
   name: "happening",
   initialState,
   reducers: {
-    addHappening: (state, action) => {
+    addHappening: (state, action: PayloadAction<string>) => {
       state.name = action.payload;
     },
   },
