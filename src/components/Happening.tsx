@@ -1,4 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addHappening } from "../../features/happening/happeningSlice";
 
@@ -6,6 +7,7 @@ const Happening = () => {
   const [newHappening, setNewHappening] = useState();
   const dispatch = useDispatch();
 
+  // so far no idea how to resolve this
   return (
     <div>
       <h3>Add the name of the happening</h3>
