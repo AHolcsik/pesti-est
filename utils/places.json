@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Klub Vittula",
+    "address": {
+      "city": "Budapest",
+      "street": "Kertész",
+      "number": 4,
+      "zip code": 1073,
+      "district": 7
+    },
+    "location": {
+      "lat": 47.49868,
+      "lng": 19.069139
+    }
+  }
+]
