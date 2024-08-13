@@ -1,9 +1,14 @@
-import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import places from "../../utils/places.json";
+"use client";
 
-console.log(places);
-function Map() {
+import "leaflet/dist/leaflet.css";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-defaulticon-compatibility";
+import places from "../../utils/places.json";
+import { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
+export default function Map({ initialData }) {
+  const [data, setData] = useState(initialData);
   return (
     <div>
       <MapContainer
@@ -27,5 +32,3 @@ function Map() {
     </div>
   );
 }
-
-export default Map;
