@@ -16,7 +16,7 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body>
-          <header className="mx-2">header</header>
+          <header className="mx-2 bg-slate-600">header</header>
           <div id="root">{children}</div>
           <footer>footer</footer>
         </body>
