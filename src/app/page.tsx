@@ -1,64 +1,31 @@
+"use client";
+
 import { data } from "autoprefixer";
 import MapCaller from "../components/MapCaller";
-/* your fetch function that fetches data server side */
-// import { fetchData } from '@/lib/data';
+import { currentlyPlayingSong, getGenres } from "../../utils/api";
+import { SpotifyEmbed } from "spotify-embed";
+import { RootState } from "../../lib/store";
+import { useAppSelector } from "../../lib/hooks";
+import { currentlyPlayingState } from "../../lib/features/spotify/spotifySlice";
 
-export default async function Home({ genres }) {
-  // const data = await fetchData();
+export default function Home() {
+  // const genres = await getGenres();
 
-  return <MapCaller initialData={data} />;
+  // const currentlyPlaying = useAppSelector((state) => state);
+  const currentlyPlaying = useAppSelector(
+    (state: { spotify: currentlyPlayingState }) => state.spotify
+  );
+  console.log("@@@", currentlyPlaying);
+
+  // console.log("### GENRES ###", genres);
+  // console.log("### CURRENTLY PLAYING ###", currentlyPlaying);
+
+  return (
+    <div>{/* <SpotifyEmbed src={currentlyPlaying.item.uri} /> */}</div>
+    // <MapCaller
+    //   initialData={data}
+    //   genres={genres}
+    //   currentlyPlaying={currentlyPlaying}
+    // />
+  );
 }
-
-const getAccessToken = async () => {
-  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-
-  const response = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${Buffer.from(
-        `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-      ).toString("base64")}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      grant_type: "refresh_token",
-      refresh_token: refresh_token ?? "",
-    }),
-  });
-
-  return response.json();
-};
-
-// export const currentlyPlayingSong = async () => {
-//   const { access_token } = await getAccessToken();
-
-//   return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-//     headers: {
-//       Authorization: `Bearer ${access_token}`,
-//     },
-//   });
-// };
-
-export const getInitialProps = async () => {
-  const { access_token } = await getAccessToken();
-
-  const genres = await fetch(
-    "https://api.spotify.com/v1/recommendations/available-genre-seeds",
-    // "https://api.spotify.com/v1/me/player/currently-playing",
-    {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
-      },
-    }
-  ).then((response) => {
-    return response.json();
-  });
-
-  console.log(genres);
-
-  return {
-    props: {
-      genres,
-    },
-  };
-};

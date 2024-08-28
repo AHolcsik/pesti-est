@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { addHappening } from "../../features/happening/happeningSlice";
+import { addHappening } from "../../lib/features/happening/happeningSlice";
 
 const Happening = () => {
   const [newHappening, setNewHappening] = useState();

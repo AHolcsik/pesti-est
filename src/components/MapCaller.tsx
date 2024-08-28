@@ -8,6 +8,8 @@ const Map = dynamic(() => import("./Map"), {
 });
 
 function MapCaller(props) {
+  //   console.log(props.currentlyPlaying);
+
   return <Map {...props} />;
 }
 

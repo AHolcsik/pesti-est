@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import StoreProvider from "./StoreProvider";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pesti Est",
-  description: "Web site created with Next.js.",
+  description: "Web site created to explore Budapest",
 };
 
 export default function RootLayout({
@@ -11,10 +13,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <div id="root">{children}</div>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body>
+          <header className="mx-2">header</header>
+          <div id="root">{children}</div>
+          <footer>footer</footer>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
