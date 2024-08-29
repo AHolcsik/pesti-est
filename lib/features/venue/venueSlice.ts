@@ -23,6 +23,6 @@ const venueSlice = createSlice({
   },
 });
 
-export const { addVenue } = venueSlice.actions;
+export const { addVenue, toggleActive } = venueSlice.actions;
 
 export default venueSlice.reducer;

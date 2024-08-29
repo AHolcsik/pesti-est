@@ -6,20 +6,21 @@ import geojson from "../../../utils/geojson.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { GeoJSON } from "react-leaflet";
 import { useAppDispatch, useAppSelector } from "../../../lib/hooks";
-import { venueState } from "../../../lib/features/venue/venueSlice";
+import {
+  venueState,
+  toggleActive,
+} from "../../../lib/features/venue/venueSlice";
 
 export default function Map({ initialData }) {
   const venues = useAppSelector((state: { venue: venueState }) => state.venue);
   const dispatch = useAppDispatch();
-
-  console.log(geojson.features[0].geometry.coordinates[1]);
 
   return (
     <>
       <MapContainer
         style={{ height: "90vh" }}
         center={[47.497913, 19.040236]}
-        zoom={14}
+        zoom={13}
         scrollWheelZoom={false}
         className="w-3/5"
         key="mapcontainer"
@@ -35,6 +36,12 @@ export default function Map({ initialData }) {
                 marker.geometry.coordinates[1],
                 marker.geometry.coordinates[0],
               ]}
+              // for some reason theres an error originating from here?
+              eventHandlers={{
+                click: () => {
+                  dispatch(toggleActive());
+                },
+              }}
               key={marker.id}
             >
               <Popup>{marker.properties.name}</Popup>

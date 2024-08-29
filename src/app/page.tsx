@@ -16,7 +16,7 @@ export default function Home() {
   const currentlyPlaying = useAppSelector(
     (state: { spotify: currentlyPlayingState }) => state.spotify
   );
-  console.log("@@@", currentlyPlaying);
+  // console.log("@@@", currentlyPlaying);
 
   // console.log("### GENRES ###", genres);
   // console.log("### CURRENTLY PLAYING ###", currentlyPlaying);
