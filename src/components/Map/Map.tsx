@@ -3,19 +3,20 @@
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
-import places from "../../utils/places.json";
+import places from "../../../utils/places.json";
 import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 export default function Map({ initialData }) {
   const [data, setData] = useState(initialData);
   return (
-    <div>
+    <>
       <MapContainer
-        style={{ height: "750px" }}
+        style={{ height: "90vh" }}
         center={[47.497913, 19.040236]}
         zoom={13}
         scrollWheelZoom={false}
+        className="w-3/5"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -29,6 +30,6 @@ export default function Map({ initialData }) {
           );
         })}
       </MapContainer>
-    </div>
+    </>
   );
 }

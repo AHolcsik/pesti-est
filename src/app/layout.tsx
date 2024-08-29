@@ -16,9 +16,9 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body>
-          <header className="mx-2 bg-slate-600">header</header>
+          <header className="h-10 bg-slate-600">header</header>
           <div id="root">{children}</div>
-          <footer>footer</footer>
+          <footer className="h-10">footer</footer>
         </body>
       </html>
     </StoreProvider>

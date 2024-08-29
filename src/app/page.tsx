@@ -1,12 +1,13 @@
 "use client";
 
 import { data } from "autoprefixer";
-import MapCaller from "../components/MapCaller";
+import MapCaller from "../components/Map/MapCaller";
 import { currentlyPlayingSong, getGenres } from "../../utils/api";
 import { SpotifyEmbed } from "spotify-embed";
 import { RootState } from "../../lib/store";
 import { useAppSelector } from "../../lib/hooks";
 import { currentlyPlayingState } from "../../lib/features/spotify/spotifySlice";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Home() {
   // const genres = await getGenres();
@@ -21,11 +22,9 @@ export default function Home() {
   // console.log("### CURRENTLY PLAYING ###", currentlyPlaying);
 
   return (
-    <div>{/* <SpotifyEmbed src={currentlyPlaying.item.uri} /> */}</div>
-    // <MapCaller
-    //   initialData={data}
-    //   genres={genres}
-    //   currentlyPlaying={currentlyPlaying}
-    // />
+    <div className="flex">
+      <MapCaller initialData={data} currentlyPlaying={currentlyPlaying} />
+      <Sidebar />
+    </div>
   );
 }
