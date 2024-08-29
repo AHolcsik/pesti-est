@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import happeningReducer from "./features/happening/happeningSlice";
+import venueReducer from "./features/venue/venueSlice";
 import spotifyReducer from "./features/spotify/spotifySlice";
 
 export const makeStore = () => {
@@ -7,6 +8,7 @@ export const makeStore = () => {
     reducer: {
       happening: happeningReducer,
       spotify: spotifyReducer,
+      venue: venueReducer,
     },
   });
 };

@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Klub Vittula"
+      },
+      "geometry": {
+        "coordinates": [19.069235597016643, 47.49864155880687],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vatoz"
+      },
+      "geometry": {
+        "coordinates": [19.073173970599527, 47.49218524952474],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zsír"
+      },
+      "geometry": {
+        "coordinates": [19.075456497856493, 47.495411201205485],
+        "type": "Point"
+      },
+      "id": 2
+    }
+  ]
+}

@@ -1,31 +1,43 @@
-"use client";
-
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
 import places from "../../../utils/places.json";
-import { useState } from "react";
+import geojson from "../../../utils/geojson.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { GeoJSON } from "react-leaflet";
+import { useAppDispatch, useAppSelector } from "../../../lib/hooks";
+import { venueState } from "../../../lib/features/venue/venueSlice";
 
 export default function Map({ initialData }) {
-  const [data, setData] = useState(initialData);
+  const venues = useAppSelector((state: { venue: venueState }) => state.venue);
+  const dispatch = useAppDispatch();
+
+  console.log(geojson.features[0].geometry.coordinates[1]);
+
   return (
     <>
       <MapContainer
         style={{ height: "90vh" }}
         center={[47.497913, 19.040236]}
-        zoom={13}
+        zoom={14}
         scrollWheelZoom={false}
         className="w-3/5"
+        key="mapcontainer"
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+          url="https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=1Ft0Hp1m1i3X67hNyMM9"
         />
-        {places.map((marker) => {
+        {geojson.features.map((marker) => {
           return (
-            <Marker position={[marker.location.lat, marker.location.lng]}>
-              <Popup>{marker.name}</Popup>
+            <Marker
+              position={[
+                marker.geometry.coordinates[1],
+                marker.geometry.coordinates[0],
+              ]}
+              key={marker.id}
+            >
+              <Popup>{marker.properties.name}</Popup>
             </Marker>
           );
         })}
