@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../lib/hooks";
+import { useAppSelector } from "../../../lib/hooks";
 import { venueState } from "../../../lib/features/venue/venueSlice";
 
 export default function Sidebar() {
@@ -9,7 +9,7 @@ export default function Sidebar() {
   return (
     <div className="w-2/5">
       <h3>Sidebar</h3>
-      {venues.isActive && <p>Welcome to {venues.name}!</p>}
+      {venues.isActive && <p>Welcome to {venues.properties.name}!</p>}
     </div>
   );
 }
