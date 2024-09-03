@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { addHappening } from "../../lib/features/happening/happeningSlice";
+// import { useDispatch } from "react-redux";
+// import { useState } from "react";
+// import { addHappening } from "../../lib/features/happening/happeningSlice";
 
 const Happening = () => {
-  const [newHappening, setNewHappening] = useState();
-  const dispatch = useDispatch();
+  // const [newHappening, setNewHappening] = useState();
+  // const dispatch = useDispatch();
 
   // so far no idea how to resolve this
   return (
     <div>
-      <h3>Add the name of the happening</h3>
+      {/* <h3>Add the name of the happening</h3>
       <div>
         <input
           onChange={(e) => {
@@ -19,7 +19,7 @@ const Happening = () => {
         <button onClick={() => dispatch(addHappening(newHappening))}>
           Add happening
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
