@@ -2,9 +2,9 @@
 
 import { data } from "autoprefixer";
 import MapCaller from "../components/Map/MapCaller";
-import { currentlyPlayingSong, getGenres } from "../../utils/api";
-import { SpotifyEmbed } from "spotify-embed";
-import { RootState } from "../../lib/store";
+// import { currentlyPlayingSong, getGenres } from "../../utils/api";
+// import { SpotifyEmbed } from "spotify-embed";
+// import { RootState } from "../../lib/store";
 import { useAppSelector } from "../../lib/hooks";
 import { currentlyPlayingState } from "../../lib/features/spotify/spotifySlice";
 import Sidebar from "../components/Sidebar/Sidebar";

@@ -5,7 +5,7 @@ import geojson from "../../../utils/geojson.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useAppDispatch } from "../../../lib/hooks";
 import {
-  venueState,
+  // venueState,
   toggleActive,
 } from "../../../lib/features/venue/venueSlice";
 
