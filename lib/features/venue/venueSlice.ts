@@ -1,12 +1,31 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import geojson from "../../../utils/geojson.json";
+
+const data = geojson.features;
 
 export interface venueState {
-  name: string;
+  type: string;
+  properties: {
+    name: string;
+  };
+  geometry: {
+    coordinates: number[];
+    type: string;
+  };
+  id: number;
   isActive: boolean;
 }
 
 const initialState: venueState = {
-  name: "Initial Venue",
+  type: "feature",
+  properties: {
+    name: "Klub Vittula",
+  },
+  geometry: {
+    coordinates: [19.069235597016643, 47.49864155880687],
+    type: "point",
+  },
+  id: 1,
   isActive: false,
 };
 

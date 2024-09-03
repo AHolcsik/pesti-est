@@ -1,17 +1,15 @@
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
-import places from "../../../utils/places.json";
 import geojson from "../../../utils/geojson.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { GeoJSON } from "react-leaflet";
 import { useAppDispatch, useAppSelector } from "../../../lib/hooks";
 import {
   venueState,
   toggleActive,
 } from "../../../lib/features/venue/venueSlice";
 
-export default function Map({ initialData }) {
+export default function Map() {
   const venues = useAppSelector((state: { venue: venueState }) => state.venue);
   const dispatch = useAppDispatch();
 
