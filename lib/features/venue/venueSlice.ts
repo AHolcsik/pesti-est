@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import geojson from "../../../utils/geojson.json";
+// import geojson from "../../../utils/geojson.json";
 
-const data = geojson.features;
+// const data = geojson.features;
 
 export interface venueState {
   type: string;

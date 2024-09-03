@@ -9,7 +9,7 @@ export interface currentlyPlayingState {
       album_type: string;
       artists: string[]; // not sure
       available_markets: string[];
-      external_urls: [Object]; // ??
+      external_urls: [object]; // ??
       href: string;
       id: string;
       images: string[]; // ??
@@ -20,7 +20,6 @@ export interface currentlyPlayingState {
       type: string;
       uri: string;
     };
-    artists: [[Object]]; // ??
     available_markets: string[];
     disc_number: number;
     duration_ms: number;
@@ -53,7 +52,7 @@ const initialState: currentlyPlayingState = {
       album_type: "",
       artists: [],
       available_markets: [],
-      external_urls: [Object],
+      external_urls: [{}],
       href: "",
       id: "",
       images: [],
@@ -64,7 +63,6 @@ const initialState: currentlyPlayingState = {
       type: "",
       uri: "",
     },
-    artists: [[Object]],
     available_markets: [],
     disc_number: 0,
     duration_ms: 0,

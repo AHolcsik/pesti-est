@@ -3,14 +3,14 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import geojson from "../../../utils/geojson.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useAppDispatch, useAppSelector } from "../../../lib/hooks";
+import { useAppDispatch } from "../../../lib/hooks";
 import {
   venueState,
   toggleActive,
 } from "../../../lib/features/venue/venueSlice";
 
 export default function Map() {
-  const venues = useAppSelector((state: { venue: venueState }) => state.venue);
+  // const venues = useAppSelector((state: { venue: venueState }) => state.venue);
   const dispatch = useAppDispatch();
 
   return (
