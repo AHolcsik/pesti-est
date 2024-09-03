@@ -20,6 +20,12 @@
     ],
     "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./build/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "./build/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next", ".vercel", "out", "build"]
 }
