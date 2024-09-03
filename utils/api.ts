@@ -1,7 +1,7 @@
 "use client";
 
-import { addCurrentlyPlaying } from "../lib/features/spotify/spotifySlice";
-import { useAppDispatch, useAppStore } from "../lib/hooks";
+// import { addCurrentlyPlaying } from "../lib/features/spotify/spotifySlice";
+// import { useAppDispatch, useAppStore } from "../lib/hooks";
 
 export const getAccessToken = async () => {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -24,7 +24,7 @@ export const getAccessToken = async () => {
 };
 
 export const currentlyPlayingSong = async () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   const { access_token } = await getAccessToken();
   try {
@@ -37,8 +37,8 @@ export const currentlyPlayingSong = async () => {
       }
     );
 
-    console.log("DISPATCH");
-    dispatch(addCurrentlyPlaying(response.json));
+    // console.log("DISPATCH");
+    // dispatch(addCurrentlyPlaying(response.json));
 
     return await response.json();
   } catch (error) {
