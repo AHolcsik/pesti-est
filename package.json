@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest ./build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
